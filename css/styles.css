@@ -1,0 +1,16 @@
+body {
+  font-family: "Proza Libre", sans-serif;
+}
+
+.column-full {
+  background-color: rgb(85, 43, 128);
+  color: white;
+  padding-left: 1.25rem;
+  padding-top: 0.01rem;
+  padding-bottom: 0.01rem;
+  font-size: 1.25rem;
+}
+
+.row {
+  display: flex;
+}
