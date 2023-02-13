@@ -36,6 +36,7 @@ input {
   margin-bottom: 5%;
   border-radius: 0.25rem;
   border-width: 0.01rem;
+  outline-color: rgb(85, 43, 128);
 }
 
 textarea {
@@ -43,6 +44,7 @@ textarea {
   border-radius: 0.25rem;
   border-width: 0.01rem;
   margin-bottom: 2%;
+  outline-color: rgb(85, 43, 128);
 }
 
 button {
