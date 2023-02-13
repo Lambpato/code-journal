@@ -1,8 +1,14 @@
 body {
   font-family: "Proza Libre", sans-serif;
+  background-color: rgb(240, 240, 240);
 }
 
-.column-full {
+div.container {
+  max-width: 100%;
+  padding: 0;
+}
+
+div.container > div.column-full {
   background-color: rgb(85, 43, 128);
   color: white;
   padding-left: 1.25rem;
@@ -13,4 +19,38 @@ body {
 
 .row {
   display: flex;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 0.25rem;
+}
+
+.entry-img {
+  margin-bottom: 5%;
+}
+
+input {
+  max-width: 100%;
+  padding: 2.5% 33%;
+  margin-bottom: 5%;
+  border-radius: 0.25rem;
+  border-width: 0.01rem;
+}
+
+textarea {
+  max-width: 100%;
+  border-radius: 0.25rem;
+  border-width: 0.01rem;
+  margin-bottom: 2%;
+}
+
+button {
+  margin-left: auto;
+  color: white;
+  background-color: rgb(85, 43, 128);
+  padding: 0.35rem 1.15rem;
+  border-radius: 0.15rem;
+  border: none;
+  font-size: medium;
 }

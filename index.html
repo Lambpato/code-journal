@@ -44,14 +44,14 @@
             <div>
               <label for="Title">Title</label>
             </div>
-            <div>
+            <div class="input">
               <input type="text" id="Title" />
             </div>
 
             <div>
               <label for="Photo-URL">Photo URL</label>
             </div>
-            <div>
+            <div class="input">
               <input type="text" id="Photo-URL" />
             </div>
           </div>
@@ -59,15 +59,21 @@
 
         </div>
 
-        <div class="row">
+        <div class="column-full">
           <div>
             <label for="Notes">Notes</label>
           </div>
-          <textarea rows="10" cols="35" id="Notes">   </textarea>
-        </div>
 
+          <div>
+            <textarea rows="10" cols="101" id="Notes">   </textarea>
+
+          </div>
+
+        </div>
+        <button>SAVE</button>
 
       </div>
+
     </div>
     <div data-view="entries" class="hidden"></div>
   </main>
