@@ -40,7 +40,6 @@ input {
 }
 
 textarea {
-  max-width: 100%;
   border-radius: 0.25rem;
   border-width: 0.01rem;
   margin-bottom: 2%;
