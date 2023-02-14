@@ -8,13 +8,15 @@ div.container {
   padding: 0;
 }
 
-div.container > div.column-full {
+header {
   background-color: rgb(85, 43, 128);
+  padding: 0.1px;
+}
+
+header > div.container {
   color: white;
-  padding-left: 1.25rem;
-  padding-top: 0.01rem;
-  padding-bottom: 0.01rem;
   font-size: 1.25rem;
+  max-width: 828px;
 }
 
 .row {
@@ -31,8 +33,9 @@ img {
 }
 
 input {
-  max-width: 100%;
-  padding: 2.5% 33%;
+  width: 100%;
+  padding: 2.3% 0;
+  margin-top: 2%;
   margin-bottom: 5%;
   border-radius: 0.25rem;
   border-width: 0.01rem;
@@ -42,8 +45,10 @@ input {
 textarea {
   border-radius: 0.25rem;
   border-width: 0.01rem;
+  margin-top: 2%;
   margin-bottom: 2%;
   outline-color: rgb(85, 43, 128);
+  max-width: 100%;
 }
 
 button {

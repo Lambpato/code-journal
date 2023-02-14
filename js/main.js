@@ -1,8 +1,8 @@
 /* global data */
 var $img = document.querySelector('.entry-img');
-var $url = document.querySelector('#Photo-URL');
-var $notes = document.querySelector('#Notes');
-var $title = document.querySelector('#Title');
+var $url = document.querySelector('#photo-url');
+var $notes = document.querySelector('#notes');
+var $title = document.querySelector('#title');
 var $form = document.querySelector('form');
 
 function imageURL(e) {
