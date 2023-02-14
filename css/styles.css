@@ -60,3 +60,25 @@ button {
   border: none;
   font-size: medium;
 }
+
+.list {
+  max-width: auto;
+}
+
+.column-half {
+  word-wrap: break-word;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.5rem;
+}
+
+li {
+  margin: 1rem 0;
+}
