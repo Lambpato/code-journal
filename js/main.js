@@ -4,6 +4,7 @@ var $url = document.querySelector('#photo-url');
 var $notes = document.querySelector('#notes');
 var $title = document.querySelector('#title');
 var $form = document.querySelector('form');
+var $entryList = document.querySelector('.userEntries');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -36,15 +37,22 @@ function renderEntry(entry) {
   $row.appendChild($columnHalfLeft);
   var $entryImg = document.createElement('img');
   $columnHalf.appendChild($entryImg);
-  $entryImg.setAttribute('src', $url.value);
+  $entryImg.setAttribute('src', entry.url);
   var $h2 = document.createElement('h2');
-  $h2.textContent = $title.value;
+  $h2.textContent = entry.title;
   var $p = document.createElement('p');
-  $p.textContent = $notes.value;
+  $p.textContent = entry.notes;
   $columnHalfLeft.appendChild($h2);
   $columnHalfLeft.appendChild($p);
   return $liEntry;
 }
 
+function appendEntries() {
+  for (var i = 0; i < data.entries.length; i++) {
+    $entryList.prepend(renderEntry(data.entries[i]));
+  }
+}
+
+document.addEventListener('DOMContentLoaded', appendEntries());
 $form.addEventListener('submit', submitForm);
 $url.addEventListener('input', imageURL);
