@@ -69,6 +69,10 @@ button {
   word-wrap: break-word;
 }
 
+div.column-half > img {
+  margin-bottom: 1rem;
+}
+
 h3 {
   margin-top: 0;
 }
