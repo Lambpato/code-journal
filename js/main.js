@@ -6,6 +6,7 @@ var $title = document.querySelector('#title');
 var $form = document.querySelector('form');
 var $entryList = document.querySelector('.userEntries');
 var $noEntry = document.querySelector('.noentry');
+var $entries = document.querySelector('#entries');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -61,6 +62,17 @@ function toggleNoEntries(entryId) {
     $noEntry.className = 'noentry hidden';
   }
 }
+
+function viewSwap(view) {
+  if (view === 'entries') {
+    $form.className = 'hidden';
+    $entries.className = 'view';
+  } else if (view === 'entry-form') {
+    $form.className = 'view';
+    $entries.className = 'hidden';
+  }
+}
+viewSwap('entry-form');
 
 document.addEventListener('DOMContentLoaded', appendEntries());
 $form.addEventListener('submit', submitForm);
