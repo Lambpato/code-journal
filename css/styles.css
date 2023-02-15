@@ -121,3 +121,7 @@ li {
   font-size: x-large;
   color: rgb(85, 43, 128);
 }
+
+.fa-pencil:hover {
+  cursor: pointer;
+}
