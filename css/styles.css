@@ -3,24 +3,27 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
-div.container {
-  max-width: 100%;
-  padding: 0;
-}
-
 header {
   background-color: rgb(85, 43, 128);
-  padding: 0.1px;
 }
 
 header > div.container {
   color: white;
   font-size: 1.25rem;
-  max-width: 828px;
 }
 
-.row {
+.column-two-fourths {
   display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.entries-nav {
+  font-size: medium;
+}
+
+.entries-nav:hover {
+  cursor: pointer;
 }
 
 img {
@@ -59,4 +62,51 @@ button {
   border-radius: 0.15rem;
   border: none;
   font-size: medium;
+}
+
+.list {
+  max-width: auto;
+}
+
+.column-half {
+  word-wrap: break-word;
+}
+
+div.column-half > img {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.5rem;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+.noentry {
+  text-align: center;
+}
+
+.entry-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-form {
+  color: white;
+  padding: 0.5rem;
+  background-color: rgb(85, 43, 128);
+  border-radius: 0.25rem;
+  font-size: small;
+}
+
+.new-form:hover {
+  cursor: pointer;
 }
