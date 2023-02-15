@@ -8,6 +8,7 @@ var $entryList = document.querySelector('.userEntries');
 var $noEntry = document.querySelector('.noentry');
 var $entries = document.querySelector('#entries');
 var $anker = document.querySelector('.entries-nav');
+var $newfrom = document.querySelector('.new-form');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -81,4 +82,8 @@ toggleNoEntries(data.nextEntryId.value);
 $anker.addEventListener('click', function (event) {
   event.preventDefault();
   viewSwap('entries');
+});
+$newfrom.addEventListener('click', function (event) {
+  event.preventDefault();
+  viewSwap('entry-form');
 });
