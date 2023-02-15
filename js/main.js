@@ -58,6 +58,8 @@ function appendEntries() {
   for (var i = 0; i < data.entries.length; i++) {
     $entryList.appendChild(renderEntry(data.entries[i]));
   }
+  viewSwap(data.view);
+  toggleNoEntries();
 }
 
 function toggleNoEntries(entryId) {
@@ -70,9 +72,11 @@ function toggleNoEntries(entryId) {
 
 function viewSwap(view) {
   if (view === 'entries') {
+    data.view = 'entries';
     $form.className = 'hidden';
     $entries.className = 'view';
   } else if (view === 'entry-form') {
+    data.view = 'entry-form';
     $form.className = 'view';
     $entries.className = 'hidden';
   }
@@ -80,7 +84,6 @@ function viewSwap(view) {
 
 document.addEventListener('DOMContentLoaded', appendEntries());
 $form.addEventListener('submit', submitForm);
-
 $url.addEventListener('input', imageURL);
 toggleNoEntries(data.nextEntryId.value);
 $anker.addEventListener('click', function (event) {
