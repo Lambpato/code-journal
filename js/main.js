@@ -5,6 +5,7 @@ var $notes = document.querySelector('#notes');
 var $title = document.querySelector('#title');
 var $form = document.querySelector('form');
 var $entryList = document.querySelector('.userEntries');
+var $noEntry = document.querySelector('.noentry');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -53,6 +54,15 @@ function appendEntries() {
   }
 }
 
+function toggleNoEntries(entryId) {
+  if (data.$entryImgnextEntryId === 1) {
+    $noEntry.className = 'noentry';
+  } else if (data.nextEntryId > 1) {
+    $noEntry.className = 'noentry hidden';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', appendEntries());
 $form.addEventListener('submit', submitForm);
 $url.addEventListener('input', imageURL);
+toggleNoEntries(data.nextEntryId.value);
