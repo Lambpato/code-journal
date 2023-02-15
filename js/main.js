@@ -33,6 +33,7 @@ function submitForm(e) {
 
 function renderEntry(entry) {
   var $liEntry = document.createElement('li');
+  $liEntry.setAttribute('data-entry-id', entry.entryId);
   var $row = document.createElement('div');
   $row.className = 'row';
   $liEntry.appendChild($row);
@@ -45,11 +46,17 @@ function renderEntry(entry) {
   var $entryImg = document.createElement('img');
   $columnHalf.appendChild($entryImg);
   $entryImg.setAttribute('src', entry.url);
+  var $titleHeader = document.createElement('div');
+  $titleHeader.className = 'title-header';
   var $h2 = document.createElement('h2');
   $h2.textContent = entry.title;
+  var $editPencil = document.createElement('i');
+  $editPencil.className = 'fa-solid fa-pencil';
   var $p = document.createElement('p');
   $p.textContent = entry.notes;
-  $columnHalfLeft.appendChild($h2);
+  $titleHeader.appendChild($h2);
+  $titleHeader.appendChild($editPencil);
+  $columnHalfLeft.appendChild($titleHeader);
   $columnHalfLeft.appendChild($p);
   return $liEntry;
 }
