@@ -86,3 +86,7 @@ ul {
 li {
   margin: 1rem 0;
 }
+
+.noentry {
+  text-align: center;
+}
