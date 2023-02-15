@@ -15,7 +15,6 @@ function imageURL(e) {
 }
 
 function submitForm(e) {
-  e.preventDefault();
   var inputs = {
     title: $title.value,
     url: $url.value,
@@ -76,7 +75,12 @@ function viewSwap(view) {
 }
 
 document.addEventListener('DOMContentLoaded', appendEntries());
-$form.addEventListener('submit', submitForm);
+$form.addEventListener('submit', function () {
+  event.preventDefault();
+  viewSwap('entries');
+  submitForm();
+});
+
 $url.addEventListener('input', imageURL);
 toggleNoEntries(data.nextEntryId.value);
 $anker.addEventListener('click', function (event) {
