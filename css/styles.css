@@ -3,11 +3,6 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
-div.container {
-  max-width: 100%;
-  padding: 0;
-}
-
 header {
   background-color: rgb(85, 43, 128);
   padding: 0.1px;
@@ -16,11 +11,21 @@ header {
 header > div.container {
   color: white;
   font-size: 1.25rem;
-  max-width: 828px;
+  max-width: auto;
 }
 
-.row {
+.column-two-fourths {
   display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.entries-nav {
+  font-size: medium;
+}
+
+.entries-nav:hover {
+  cursor: pointer;
 }
 
 img {

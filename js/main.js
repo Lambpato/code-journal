@@ -7,6 +7,7 @@ var $form = document.querySelector('form');
 var $entryList = document.querySelector('.userEntries');
 var $noEntry = document.querySelector('.noentry');
 var $entries = document.querySelector('#entries');
+var $anker = document.querySelector('.entries-nav');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -72,9 +73,12 @@ function viewSwap(view) {
     $entries.className = 'hidden';
   }
 }
-viewSwap('entry-form');
 
 document.addEventListener('DOMContentLoaded', appendEntries());
 $form.addEventListener('submit', submitForm);
 $url.addEventListener('input', imageURL);
 toggleNoEntries(data.nextEntryId.value);
+$anker.addEventListener('click', function (event) {
+  event.preventDefault();
+  viewSwap('entries');
+});
