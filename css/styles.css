@@ -5,13 +5,11 @@ body {
 
 header {
   background-color: rgb(85, 43, 128);
-  padding: 0.1px;
 }
 
 header > div.container {
   color: white;
   font-size: 1.25rem;
-  max-width: auto;
 }
 
 .column-two-fourths {
@@ -94,4 +92,21 @@ li {
 
 .noentry {
   text-align: center;
+}
+
+.entry-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-form {
+  color: white;
+  padding: 0.5rem;
+  background-color: rgb(85, 43, 128);
+  border-radius: 0.25rem;
+  font-size: small;
+}
+
+.new-form:hover {
+  cursor: pointer;
 }
