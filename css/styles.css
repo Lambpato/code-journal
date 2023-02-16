@@ -83,7 +83,7 @@ h3 {
 ul {
   list-style: none;
   padding-left: 0;
-  line-height: 1.5rem;
+  line-height: 0.5rem;
 }
 
 li {
@@ -108,5 +108,20 @@ li {
 }
 
 .new-form:hover {
+  cursor: pointer;
+}
+
+.title-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fa-pencil {
+  font-size: x-large;
+  color: rgb(85, 43, 128);
+}
+
+.fa-pencil:hover {
   cursor: pointer;
 }
