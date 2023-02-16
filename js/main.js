@@ -8,7 +8,7 @@ var $entryList = document.querySelector('.userEntries');
 var $noEntry = document.querySelector('.noentry');
 var $entries = document.querySelector('#entries');
 var $anker = document.querySelector('.entries-nav');
-var $newfrom = document.querySelector('.new-form');
+var $newform = document.querySelector('.new-form');
 var $editButton = document.querySelector('.fa-pencil');
 var $secondHead = document.querySelector('h1');
 
@@ -24,13 +24,31 @@ function submitForm(e) {
     notes: $notes.value,
     entryId: data.nextEntryId
   };
-  data.nextEntryId++;
-  data.entries.unshift(inputs);
-  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-  e.target.reset();
-  $entryList.prepend(renderEntry(inputs));
+
+  if (data.editing === null) {
+    data.nextEntryId++;
+    data.entries.unshift(inputs);
+    $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+    e.target.reset();
+    toggleNoEntries();
+    $entryList.prepend(renderEntry(inputs));
+  } else if (data.editing !== null) {
+    inputs.entryId = data.editing.entryId;
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        data.entries[i] = inputs;
+      }
+    }
+    var $li = document.querySelectorAll('li');
+    for (var y = 0; y < $li.length; y++) {
+      if (Number($li[y].getAttribute('data-entry-id')) === data.editing.entryId) {
+        $li[y].replaceWith(renderEntry(inputs));
+      }
+    }
+    data.editing = null;
+  }
   viewSwap('entries');
-  toggleNoEntries();
+  $form.reset();
 }
 
 function renderEntry(entry) {
@@ -117,8 +135,10 @@ $anker.addEventListener('click', function (event) {
   event.preventDefault();
   viewSwap('entries');
 });
-$newfrom.addEventListener('click', function (event) {
+$newform.addEventListener('click', function (event) {
   event.preventDefault();
   viewSwap('entry-form');
+  $secondHead.textContent = 'New Entry';
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
 });
 $entryList.addEventListener('click', editEntry);

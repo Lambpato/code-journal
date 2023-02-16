@@ -25,7 +25,8 @@
 
   .column-full,
   .column-half,
-  .column-two-fourths {
+  .column-two-fourths,
+  #entries {
     padding: 0 0.75rem;
   }
 

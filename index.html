@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -27,12 +28,11 @@
           <p>Code Journal</p>
           <a class="entries-nav">Entries</a>
         </div>
-
       </div>
     </div>
   </header>
-  <main class="container">
 
+  <main class="container">
     <form data-view="entry-form">
       <div class="row">
         <div class="column-full">
@@ -61,39 +61,31 @@
               <input type="text" id="photo-url" required>
             </div>
           </div>
-
-
         </div>
 
         <div class="column-full">
           <div>
             <label for="notes">Notes</label>
           </div>
-
           <div>
-            <textarea rows="10" cols="102" id="notes">   </textarea>
-
+            <textarea rows="10" cols="100" id="notes"></textarea>
           </div>
-
         </div>
-
         <button type="submit">SAVE</button>
-
-
       </div>
-
     </form>
+
     <div data-view="entries" id="entries" class="hidden">
       <div class="row entry-header">
         <h2>Entries</h2>
         <a class="new-form">NEW</a>
       </div>
-
       <ul class="userEntries">
         <li class="noentry">No entries have ben recorded</li>
       </ul>
     </div>
   </main>
+
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
