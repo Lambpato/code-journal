@@ -15,6 +15,7 @@ var $delete = document.querySelector('#delete-butt');
 var $overLay = document.querySelector('.overlay');
 var $popUp = document.querySelector('.popup');
 var $cancelButt = document.querySelector('.cancel-butt');
+var $confirmButt = document.querySelector('.confirm-butt');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -144,6 +145,21 @@ function cancelDelete(e) {
   $overLay.className = 'overlay hidden';
 }
 
+function confirmDelete(e) {
+  // var $li = document.querySelectorAll('li');
+
+  for (var i = 0; i < data.entries.length; i++) {
+    // var $liValues = Number($li[i].getAttribute('data-entry-id'));
+    if (data.entries[i].entryId === data.editing.entryId) {
+      // data.entries.splice(i, 1);
+      // console.log('its working');
+
+      // console.log(typeof data.entries[i]);
+      // console.log('this is data.entries', data.entries[i]);
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', appendEntries());
 $form.addEventListener('submit', submitForm);
 $url.addEventListener('input', imageURL);
@@ -164,3 +180,4 @@ $newform.addEventListener('click', function (event) {
 $entryList.addEventListener('click', editEntry);
 $delete.addEventListener('click', deleteEntry);
 $cancelButt.addEventListener('click', cancelDelete);
+$confirmButt.addEventListener('click', confirmDelete);
