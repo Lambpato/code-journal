@@ -12,6 +12,8 @@ var $newform = document.querySelector('.new-form');
 var $editButton = document.querySelector('.fa-pencil');
 var $secondHead = document.querySelector('h1');
 var $delete = document.querySelector('#delete-butt');
+var $overLay = document.querySelector('.overlay');
+var $popUp = document.querySelector('.popup');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -146,4 +148,12 @@ $newform.addEventListener('click', function (event) {
   $form.reset();
   $delete.className = 'hidden';
 });
+
+function deleteEntry(e) {
+  e.preventDefault();
+  $popUp.className = 'popup';
+  $overLay.className = 'overlay';
+}
+
 $entryList.addEventListener('click', editEntry);
+$delete.addEventListener('click', deleteEntry);
