@@ -14,6 +14,7 @@ var $secondHead = document.querySelector('h1');
 var $delete = document.querySelector('#delete-butt');
 var $overLay = document.querySelector('.overlay');
 var $popUp = document.querySelector('.popup');
+var $cancelButt = document.querySelector('.cancel-butt');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -131,6 +132,18 @@ function editEntry(e) {
   }
 }
 
+function deleteEntry(e) {
+  e.preventDefault();
+  $popUp.className = 'popup';
+  $overLay.className = 'overlay';
+}
+
+function cancelDelete(e) {
+  e.preventDefault();
+  $popUp.className = 'popup hidden';
+  $overLay.className = 'overlay hidden';
+}
+
 document.addEventListener('DOMContentLoaded', appendEntries());
 $form.addEventListener('submit', submitForm);
 $url.addEventListener('input', imageURL);
@@ -148,12 +161,6 @@ $newform.addEventListener('click', function (event) {
   $form.reset();
   $delete.className = 'hidden';
 });
-
-function deleteEntry(e) {
-  e.preventDefault();
-  $popUp.className = 'popup';
-  $overLay.className = 'overlay';
-}
-
 $entryList.addEventListener('click', editEntry);
 $delete.addEventListener('click', deleteEntry);
+$cancelButt.addEventListener('click', cancelDelete);
