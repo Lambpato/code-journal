@@ -11,6 +11,7 @@ var $anker = document.querySelector('.entries-nav');
 var $newform = document.querySelector('.new-form');
 var $editButton = document.querySelector('.fa-pencil');
 var $secondHead = document.querySelector('h1');
+var $delete = document.querySelector('#delete-butt');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -124,6 +125,7 @@ function editEntry(e) {
     $url.value = data.editing.url;
     $notes.value = data.editing.notes;
     $secondHead.textContent = 'Edit Entry';
+    $delete.className = 'delete';
   }
 }
 
@@ -134,11 +136,14 @@ toggleNoEntries(data.nextEntryId.value);
 $anker.addEventListener('click', function (event) {
   event.preventDefault();
   viewSwap('entries');
+  $delete.className = 'hidden';
 });
 $newform.addEventListener('click', function (event) {
   event.preventDefault();
   viewSwap('entry-form');
   $secondHead.textContent = 'New Entry';
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.reset();
+  $delete.className = 'hidden';
 });
 $entryList.addEventListener('click', editEntry);
