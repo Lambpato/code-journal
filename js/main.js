@@ -151,13 +151,16 @@ function confirmDelete(e) {
     if (data.entries[i].entryId === data.editing.entryId) {
       // data.entries.splice(i, 1);
       // var $ul = document.querySelector('ul');
-    // var $liList = $ul.childNodes;
-      // console.log(data.entries);
+      //  var $liList = $ul.childNodes;
+      // var $liToDelete = $liList.getElementsByClassName('data-entry-id');
+      // console.log($liToDelete);
+      // console.log($liList);
+      // console.log(typeof $liList);
       // // var $dataEntryId = data.editing.entryId;
       // // var $nextEntryId = data.nextEntryId;
       // // $dataEntryId - 1;
       // // $nextEntryId - 1;
-      // console.log($liList);
+
       // console.log($liList[i]);
       // console.log('fart');
       // console.log($idElementDelete);
