@@ -153,22 +153,11 @@ function confirmDelete(e) {
     if (data.entries[i].entryId === data.editing.entryId) {
       data.entries.splice(i, 1);
       $ul.removeChild($li[i]);
-      // for (var value of $li.values()) {
-      //   // console.log($liList);
-
-      // }
-      // var $liToDelete = $liList.getElementsByClassName('data-entry-id');
-      // console.log($liList);
-      // console.log(typeof $liList);
-      // // var $dataEntryId = data.editing.entryId;
-      // // var $nextEntryId = data.nextEntryId;
-      // // $dataEntryId - 1;
-      // // $nextEntryId - 1;
-
-      // console.log($liList[i]);
-      // console.log('fart');
-      // console.log($idElementDelete);
     }
+  }
+  if (data.entries.length === 0) {
+    data.nextEntryId = 1;
+    toggleNoEntries();
   }
   viewSwap('entries');
   data.editing = null;
