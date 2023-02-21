@@ -36,8 +36,8 @@ function submitForm(e) {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
     e.target.reset();
     toggleNoEntries();
-    $entryList.prepend(renderEntry(inputs));
-  } else if (data.editing !== null) {
+    $entryList.prepend(renderEntry(data.entries[0]));
+  } else {
     inputs.entryId = data.editing.entryId;
     for (var i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === data.editing.entryId) {
@@ -146,14 +146,18 @@ function cancelDelete(e) {
 }
 
 function confirmDelete(e) {
+  var $li = document.querySelectorAll('li');
+  var $ul = document.querySelector('ul');
 
   for (var i = 0; i < data.entries.length; i++) {
     if (data.entries[i].entryId === data.editing.entryId) {
-      // data.entries.splice(i, 1);
-      // var $ul = document.querySelector('ul');
-      //  var $liList = $ul.childNodes;
+      data.entries.splice(i, 1);
+      $ul.removeChild($li[i]);
+      // for (var value of $li.values()) {
+      //   // console.log($liList);
+
+      // }
       // var $liToDelete = $liList.getElementsByClassName('data-entry-id');
-      // console.log($liToDelete);
       // console.log($liList);
       // console.log(typeof $liList);
       // // var $dataEntryId = data.editing.entryId;
@@ -167,6 +171,7 @@ function confirmDelete(e) {
     }
   }
   viewSwap('entries');
+  data.editing = null;
   $popUp.className = 'popup hidden';
   $overLay.className = 'overlay hidden';
 }
