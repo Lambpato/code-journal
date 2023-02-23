@@ -157,8 +157,11 @@ button:hover,
   padding: 2rem 1rem 1rem;
   box-shadow: 5px 5px 10px black;
   position: absolute;
-  left: 25%;
-  top: 60%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   z-index: 1;
 }
 
