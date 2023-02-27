@@ -11,6 +11,11 @@ var $anker = document.querySelector('.entries-nav');
 var $newform = document.querySelector('.new-form');
 var $editButton = document.querySelector('.fa-pencil');
 var $secondHead = document.querySelector('h1');
+var $delete = document.querySelector('#delete-butt');
+var $overLay = document.querySelector('.overlay');
+var $popUp = document.querySelector('.popup');
+var $cancelButt = document.querySelector('.cancel-butt');
+var $confirmButt = document.querySelector('.confirm-butt');
 
 function imageURL(e) {
   $img.setAttribute('src', $url.value);
@@ -31,8 +36,8 @@ function submitForm(e) {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
     e.target.reset();
     toggleNoEntries();
-    $entryList.prepend(renderEntry(inputs));
-  } else if (data.editing !== null) {
+    $entryList.prepend(renderEntry(data.entries[0]));
+  } else {
     inputs.entryId = data.editing.entryId;
     for (var i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === data.editing.entryId) {
@@ -124,7 +129,40 @@ function editEntry(e) {
     $url.value = data.editing.url;
     $notes.value = data.editing.notes;
     $secondHead.textContent = 'Edit Entry';
+    $delete.className = 'delete';
   }
+}
+
+function deleteEntry(e) {
+  e.preventDefault();
+  $popUp.className = 'popup';
+  $overLay.className = 'overlay';
+}
+
+function cancelDelete(e) {
+  e.preventDefault();
+  $popUp.className = 'popup hidden';
+  $overLay.className = 'overlay hidden';
+}
+
+function confirmDelete(e) {
+  var $li = document.querySelectorAll('li');
+  var $ul = document.querySelector('ul');
+
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing.entryId) {
+      data.entries.splice(i, 1);
+      $ul.removeChild($li[i]);
+    }
+  }
+  if (data.entries.length === 0) {
+    data.nextEntryId = 1;
+    toggleNoEntries();
+  }
+  viewSwap('entries');
+  data.editing = null;
+  $popUp.className = 'popup hidden';
+  $overLay.className = 'overlay hidden';
 }
 
 document.addEventListener('DOMContentLoaded', appendEntries());
@@ -134,11 +172,17 @@ toggleNoEntries(data.nextEntryId.value);
 $anker.addEventListener('click', function (event) {
   event.preventDefault();
   viewSwap('entries');
+  $delete.className = 'hidden';
 });
 $newform.addEventListener('click', function (event) {
   event.preventDefault();
   viewSwap('entry-form');
   $secondHead.textContent = 'New Entry';
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.reset();
+  $delete.className = 'hidden';
 });
 $entryList.addEventListener('click', editEntry);
+$delete.addEventListener('click', deleteEntry);
+$cancelButt.addEventListener('click', cancelDelete);
+$confirmButt.addEventListener('click', confirmDelete);

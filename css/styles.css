@@ -54,14 +54,20 @@ textarea {
   max-width: 100%;
 }
 
-button {
-  margin-left: auto;
+.save-butt {
   color: white;
   background-color: rgb(85, 43, 128);
   padding: 0.35rem 1.15rem;
   border-radius: 0.15rem;
   border: none;
   font-size: medium;
+}
+
+#delete-butt {
+  background-color: transparent;
+  color: red;
+  padding: 0;
+  border: none;
 }
 
 .list {
@@ -107,10 +113,6 @@ li {
   font-size: small;
 }
 
-.new-form:hover {
-  cursor: pointer;
-}
-
 .title-header {
   display: flex;
   align-items: center;
@@ -122,6 +124,71 @@ li {
   color: rgb(85, 43, 128);
 }
 
+#delete-butt:hover,
+button:hover,
+.new-form:hover,
 .fa-pencil:hover {
   cursor: pointer;
+}
+
+.button-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.overlay {
+  background-color: rgb(0 0 0 / 75%);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.popup {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 32rem;
+  height: 13rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem 1rem 1rem;
+  box-shadow: 5px 5px 10px black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+}
+
+.delete-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cancel-butt {
+  background-color: rgb(182, 182, 182);
+  color: black;
+}
+
+.confirm-butt {
+  background-color: rgb(220, 38, 39);
+  color: white;
+}
+
+.cancel-butt,
+.confirm-butt {
+  font-size: x-large;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+strong {
+  font-size: 1.4rem;
 }

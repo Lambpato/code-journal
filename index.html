@@ -21,6 +21,15 @@
 </head>
 
 <body>
+  <div class="overlay hidden"></div>
+  <div class="popup hidden">
+    <p><strong>Are you sure you want to delete this entry?</strong></p>
+    <div class="delete-options">
+      <button class="cancel-butt">CANCEL</button>
+      <button class="confirm-butt">CONFIRM</button>
+    </div>
+  </div>
+
   <header>
     <div class="container">
       <div class="row">
@@ -38,7 +47,6 @@
         <div class="column-full">
           <h1>New Entry</h1>
         </div>
-
         <div class="row">
           <div class="column-half">
             <div>
@@ -71,7 +79,11 @@
             <textarea rows="10" cols="100" id="notes"></textarea>
           </div>
         </div>
-        <button type="submit">SAVE</button>
+        <div class="button-row">
+          <button class="hidden" id="delete-butt"><u>Delete Entries</u></button>
+          <button class="save-butt" type="submit">SAVE</button>
+        </div>
+
       </div>
     </form>
 
